@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">		
+	<title>Главная</title>	
+	<link rel="stylesheet" href="css/main.css">		
+	<!--script src="js/common.js"></script-->
+</head>
+<body>
+	<h1>Объектная модель браузера</h1>	
+	<div id="demolinks">
+		<a href="javascript:f()">Click me</a><br>
+		<a href="javascript:demoReload()">Reload</a><br>
+		<a href="javascript:demoAssign()">Assign</a><br>
+		<a href="javascript:demoReplace()">Replace</a><br>
+		<a href="javascript:dw()">Перезаписываем html</a><br>
+		<a href="javascript:dialog()">Диалоговое окно</a><br>
+	</div>	
+	<script>
+/*
+Window
+	History
+	Navigator
+	Screen
+	Location
+	Document
+==========
+	alert()
+	confirm()
+	prompt()
+
+
+
+
+
+	*/
+
+document.write('<div>Новый текст из скрипта</div>');
+	document.write('<style>div {display: block;}</style>');
+
+
+	function f() {
+		var s = '';
+		for (var p in location)
+			console.log(p, ':', location[p]);
+	}
+
+	function demoReload() {
+		location.reload();
+	}	
+
+	function demoAssign() {
+		location.assign("http://ya.ru");
+	}
+
+	function demoReplace() {
+		location.replace("http://ya.ru");
+	}
+
+
+	function dw() {
+		//document.open();
+		document.write('<html><h1>Hello</h1><html>');
+		//document.close();
+	}
+	
+	function dialog() {
+		/*var x = prompt('Are you sure?', 'Yes');
+		alert(x);*/
+		//var x = confirm('Are you sure?');
+		//alert(x);
+	}
+
+	
+
+</script>
+</body>
+</html>

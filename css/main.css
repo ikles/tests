@@ -1,0 +1,154 @@
+/*input[type=submit]*/
+.top {
+  display: block; }
+  .top__line {
+    display: block; }
+
+body {
+  background-color: #1C3862; }
+
+#hero {
+  width: 250px;
+  height: 358px;
+  position: relative;
+  left: 20px;
+  top: 30px; }
+
+@-webkit-keyframes hero-stance {
+  from {
+    top: 0; }
+  to {
+    top: -10px; } }
+
+@keyframes hero-stance {
+  from {
+    top: 0; }
+  to {
+    top: -10px; } }
+
+#hero .stance {
+  visibility: hidden;
+  background: url("../img/stance.png") no-repeat 0 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation-name: hero-stance;
+          animation-name: hero-stance;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out; }
+
+#hero .attac {
+  visibility: hidden;
+  background: url("../img/attac.png") no-repeat 0 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+#hero.idle .stance {
+  visibility: visible;
+  z-index: 2; }
+
+#hero.attac .attac {
+  z-index: 2;
+  visibility: visible;
+  top: -20px; }
+
+@-webkit-keyframes shadow {
+  from {
+    width: 250px; }
+  to {
+    width: 225px;
+    left: 12.5px; } }
+
+@keyframes shadow {
+  from {
+    width: 250px; }
+  to {
+    width: 225px;
+    left: 12.5px; } }
+
+#hero .shadow {
+  background: url("../img/shadow.png") no-repeat;
+  background-size: 100%;
+  width: 250px;
+  height: 48px;
+  left: 0;
+  bottom: -20px;
+  position: absolute;
+  z-index: 1;
+  -webkit-animation-name: shadow;
+          animation-name: shadow;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out; }
+
+#hero.attac .shadow {
+  -webkit-animation-name: none;
+          animation-name: none;
+  width: 225px;
+  left: 12.5px; }
+
+#hero .text {
+  font-size: 50px;
+  font-weight: thin;
+  color: #FFF;
+  width: 310px;
+  position: absolute;
+  left: 130%;
+  top: 0px; }
+
+@-webkit-keyframes laser {
+  from {
+    width: 180px; }
+  to {
+    width: 460px; } }
+
+@keyframes laser {
+  from {
+    width: 180px; }
+  to {
+    width: 460px; } }
+
+#hero .laser {
+  width: 460px;
+  height: 60px;
+  background: url("../img/laser.png");
+  position: absolute;
+  left: 140px;
+  top: 20px;
+  background-size: 100% 100%;
+  -webkit-animation-name: laser;
+          animation-name: laser;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear; }
+  #hero .laser:after {
+    content: "";
+    width: 4px;
+    height: 100%;
+    right: 0;
+    top: 1px;
+    background-color: #ffe500;
+    position: absolute;
+    -webkit-box-shadow: 0px 0px 10px 3px #ffe500;
+            box-shadow: 0px 0px 10px 3px #ffe500;
+    -webkit-border-radius: 3px;
+            border-radius: 3px; }
